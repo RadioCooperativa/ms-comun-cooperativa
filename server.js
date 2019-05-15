@@ -50,12 +50,12 @@ handler.register(server);
 const concesionariaRouters = require('./routers/v1/concesionaria-routers');
 const sucursalRouters = require('./routers/v1/sucursal-routers');
 const marcaRouters = require('./routers/v1/marca-routers');
-
+const as_cma_coRouters = require('./routers/v1/asc-marca-concesionaria-routers');
 
 concesionariaRouters.register(server);
 sucursalRouters.register(server);
 marcaRouters.register(server);
-
+as_cma_coRouters.register(server);
 
 
 
