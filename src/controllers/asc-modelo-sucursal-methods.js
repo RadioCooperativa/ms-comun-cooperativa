@@ -43,6 +43,6 @@ let _delete = async function (req, res, next){
 };
 
 module.exports = {
-    insertAscMaCo: _insert,
-    deleteAscMaCo: _delete
+    insertAscMoSuc: _insert,
+    deleteAscMoSuc: _delete
 }

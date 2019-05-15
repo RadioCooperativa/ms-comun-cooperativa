@@ -20,7 +20,7 @@ module.exports.register = (server) => {
         path: '/marca/',
         version: '1.0.0',
         validation: {
-            params: require('../../src/validators/marcas/insert')
+            params: require('../../src/validators/marca/insert')
         },
     },
     methods.insertMarca
@@ -30,7 +30,7 @@ module.exports.register = (server) => {
         path: '/marca/:id',
         version: '1.0.0',
         validation: {
-            params: require('../../src/validators/marcas/insert')
+            params: require('../../src/validators/marca/insert')
         },
     },
     methods.updateMarca

@@ -20,7 +20,7 @@ module.exports.register = (server) => {
         path: '/sucursal/',
         version: '1.0.0',
         validation: {
-            params: require('../../src/validators/sucursales/insert')
+            params: require('../../src/validators/sucursal/insert')
         },
     },
     methods.insertSuc
@@ -30,7 +30,7 @@ module.exports.register = (server) => {
         path: '/sucursal/:id',
         version: '1.0.0',
         validation: {
-            params: require('../../src/validators/sucursales/insert')
+            params: require('../../src/validators/sucursal/insert')
         },
     },
     methods.updateSuc

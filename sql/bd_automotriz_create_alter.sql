@@ -25,13 +25,23 @@ CREATE TABLE T_MODELO(
 
 CREATE TABLE T_REGISTROS_MARCA_CONCESIONARIA(
 	id_marca 			int not null,
-	id_concesionaria 	int not null
+	id_concesionaria 	int not null,
+	fecha_creacion 			date null,
+  	fecha_modificacion 		date null,
+  	usuario_creacion 		int null,
+  	usuario_modificacion 	int null,
+ 	vigente 				bit
 )ENGINE=InnoDb;
 
 
 CREATE TABLE T_REGISTROS_MODELO_SUCURSAL(
 	id_modelo 			int not null,
-	id_sucursal 			int not null
+	id_sucursal 			int not null,
+	fecha_creacion 			date null,
+  	fecha_modificacion 		date null,
+  	usuario_creacion 		int null,
+  	usuario_modificacion 	int null,
+ 	vigente 				bit
 )ENGINE=InnoDb;
 
 CREATE TABLE T_CONCESIONARIA(

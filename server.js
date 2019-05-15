@@ -50,14 +50,16 @@ handler.register(server);
 const concesionariaRouters = require('./routers/v1/concesionaria-routers');
 const sucursalRouters = require('./routers/v1/sucursal-routers');
 const marcaRouters = require('./routers/v1/marca-routers');
-const as_cma_coRouters = require('./routers/v1/asc-marca-concesionaria-routers');
+const modeloRouters = require('./routers/v1/modelo-routers');
+const asc_ma_coRouters = require('./routers/v1/asc-marca-concesionaria-routers');
+const asc_mo_sucRouters = require('./routers/v1/asc-modelo-sucursal-routers');
 
 concesionariaRouters.register(server);
 sucursalRouters.register(server);
 marcaRouters.register(server);
-as_cma_coRouters.register(server);
-
-
+modeloRouters.register(server);
+asc_ma_coRouters.register(server);
+asc_mo_sucRouters.register(server);
 
 const cors = corsMiddleware({
   preflightMaxAge: 5,

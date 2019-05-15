@@ -3,19 +3,18 @@ var methods = require('../../src/controllers/asc-modelo-sucursal-methods');
 
 module.exports.register = (server) => {
     server.post({
-        path: '/asc-modelo-concesionaria/',
+        path: '/asc-modelo-sucursal/',
         version: '1.0.0',
         // validation: {
-        //     params: require('../../src/validators/concesionarias/insert')
+        //     params: require('../../src/validators/id')
         // },
     },
-    methods.insertAscModSuc
+    methods.insertAscMoSuc
     );
-
     server.del({
-        path: '/asc-modelo-concesionaria/?id_modelo&id_sucursal',
+        path: '/asc-modelo-sucursal/',
         version: '1.0.0'
     },
-    methods.deleteAscModSuc
+    methods.deleteAscMoSuc
     );
 }

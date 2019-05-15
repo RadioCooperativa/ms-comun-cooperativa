@@ -5,15 +5,14 @@ module.exports.register = (server) => {
     server.post({
         path: '/asc-marca-concesionaria/',
         version: '1.0.0',
-        // validation: {
-        //     params: require('../../src/validators/concesionarias/insert')
-        // },
+        validation: {
+            params: require('../../src/validators/asociacion/insert_MA_CO')
+        },
     },
     methods.insertAscMaCo
     );
-
     server.del({
-        path: '/asc-marca-concesionaria/?id_marca&id_concesionaria',
+        path: '/asc-marca-concesionaria/',
         version: '1.0.0'
     },
     methods.deleteAscMaCo

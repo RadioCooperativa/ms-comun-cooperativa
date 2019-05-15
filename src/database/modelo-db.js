@@ -46,7 +46,7 @@ async function updateModelo(params){
     const {id, id_marca, nombre_modelo, descripcion_modelo } = params;
     const fecha_modificacion = {fecha_modificacion: new Date()}
 
-    let query = 'UPDATE T_MODELO SET nombre_modelo = ?, descripcion_modelo = ?, fecha_modificacion = ?,  usuario_modificacion = ?, vigente = ? WHERE ID_MODELO = '+id+'';
+    let query = 'UPDATE T_MODELO SET id_marca = ?, nombre_modelo = ?, descripcion_modelo = ?, fecha_modificacion = ?,  usuario_modificacion = ?, vigente = ? WHERE ID_MODELO = '+id+'';
 
     const result = await pool.query(query,[id_marca, nombre_modelo, descripcion_modelo, fecha_modificacion.fecha_modificacion, null, 0]);
 

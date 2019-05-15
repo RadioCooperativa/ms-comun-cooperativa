@@ -19,9 +19,9 @@ module.exports.register = (server) => {
     server.post({
         path: '/modelo/',
         version: '1.0.0',
-        validation: {
-            params: require('../../src/validators/modelos/insert')
-        },
+        // validation: {
+        //     params: require('../../src/validators/modelos/insert')
+        // },
     },
     methods.insertModelo
     );
@@ -29,9 +29,9 @@ module.exports.register = (server) => {
     server.put({
         path: '/modelo/:id',
         version: '1.0.0',
-        validation: {
-            params: require('../../src/validators/modelos/insert')
-        },
+        // validation: {
+        //     params: require('../../src/validators/modelos/insert')
+        // },
     },
     methods.updateModelo
     );

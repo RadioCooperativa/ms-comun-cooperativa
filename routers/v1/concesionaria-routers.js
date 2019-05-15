@@ -20,7 +20,7 @@ module.exports.register = (server) => {
         path: '/concesionaria/',
         version: '1.0.0',
         validation: {
-            params: require('../../src/validators/concesionarias/insert')
+            params: require('../../src/validators/concesionaria/insert')
         },
     },
     methods.insertCons
@@ -30,7 +30,7 @@ module.exports.register = (server) => {
         path: '/concesionaria/:id',
         version: '1.0.0',
         validation: {
-            params: require('../../src/validators/concesionarias/insert')
+            params: require('../../src/validators/concesionaria/insert')
         },
     },
     methods.updateCons

@@ -24,7 +24,7 @@ async function deleteAscMoSuc(id_modelo, id_sucursal){
     const fecha_modificacion = {fecha_modificacion: new Date()}
     const eliminado = enums.Eliminado;
     
-    let query = 'UPDATE T_REGISTROS_MODELO_SUCURSAL SET fecha_modificacion = ?,  usuario_modificacion = ?, vigente = ? WHERE ID_MARCA = '+id_modelo+' AND ID_CONCESIONARIA = '+id_sucursal+'';
+    let query = 'UPDATE T_REGISTROS_MODELO_SUCURSAL SET fecha_modificacion = ?,  usuario_modificacion = ?, vigente = ? WHERE ID_MODELO = '+id_modelo+' AND ID_SUCURSAL = '+id_sucursal+'';
     const result = await pool.query(query,[fecha_modificacion.fecha_modificacion, null, eliminado]);
 
     if (result[0].affectedRows === 0) {
