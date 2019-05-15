@@ -48,7 +48,15 @@ handler.register(server);
 
 // Setup route Handling
 const concesionariaRouters = require('./routers/v1/concesionaria-routers');
+const sucursalRouters = require('./routers/v1/sucursal-routers');
+const marcaRouters = require('./routers/v1/marca-routers');
+
+
 concesionariaRouters.register(server);
+sucursalRouters.register(server);
+marcaRouters.register(server);
+
+
 
 
 const cors = corsMiddleware({

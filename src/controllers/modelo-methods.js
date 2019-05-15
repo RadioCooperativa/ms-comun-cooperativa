@@ -1,12 +1,12 @@
 'use strict'
 require('dotenv').config({ path: 'env.env' });
-const concesionariaServices = require('../database/concesionaria-db');
+const modeloServices = require('../database/modelo-db');
 const httpStatus = require('http-status');
 const constants = require('../../common/const');
 
 let _get = async function (req, res, next) {
     try {
-        let result = await concesionariaServices.getCons();
+        let result = await modeloServices.getModelo();
         if (result == null) {
             res.json(httpStatus.NOT_FOUND);
             res.end();
@@ -22,7 +22,7 @@ let _get = async function (req, res, next) {
 let _getId = async function (req, res, next) {
     try {
         const id = req.params.id
-        let result = await concesionariaServices.getConsId(id);
+        let result = await modeloServices.getModeloId(id);
         if (result === null) {
             res.json(httpStatus.NOT_FOUND);
             res.end();
@@ -39,7 +39,7 @@ let _getId = async function (req, res, next) {
 let _insert = async function (req, res, next){
     try{
         const { params } = req;
-        let result = await concesionariaServices.insertCons(params);
+        let result = await modeloServices.insertModelo(params);
 
         if(result === null){
             res.json(httpStatus.NOT_FOUND);
@@ -58,7 +58,7 @@ let _insert = async function (req, res, next){
 let _update = async function (req, res, next){
     try{
         const { params } = req;
-        let result = await concesionariaServices.updateCons(params);
+        let result = await modeloServices.updateModelo(params);
         
         if(result === null){
             res.json(httpStatus.NOT_FOUND);
@@ -77,7 +77,7 @@ let _update = async function (req, res, next){
 let _delete = async function (req, res, next){
     try{
         const { params:{id} } = req;
-        let result = await concesionariaServices.deleteCons(id);
+        let result = await modeloServices.deleteModelo(id);
         
         if(result === null){
             res.json(httpStatus.NOT_FOUND);
@@ -96,7 +96,7 @@ let _delete = async function (req, res, next){
 module.exports = {
     get: _get,
     getId: _getId,
-    insertCons: _insert,
-    updateCons: _update,
-    deleteCons: _delete
+    insertModelo: _insert,
+    updateModelo: _update,
+    deleteModelo: _delete
 }

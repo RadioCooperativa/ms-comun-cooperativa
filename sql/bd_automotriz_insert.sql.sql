@@ -43,6 +43,9 @@ INSERT INTO T_REGISTROS_MARCA_CONCESIONARIA (id_marca, id_concesionaria) VALUES
 (1, 16),
 (1, 17);
 
+INSERT INTO T_REGISTROS_MODELO_SUCURSAL (id_modelo, id_sucursal) VALUES
+(1,1);
+
 INSERT INTO T_SUCURSAL (nombre_sucursal, descripcion_sucursal, id_comuna, id_concesionaria, direccion_sucursal, fecha_creacion, fecha_modificacion, usuario_creacion, usuario_modificacion, vigente) VALUES
 ('Antofagasta', 'Antofagasta', 2, 1, NULL, CURRENT_TIMESTAMP(), NULL, NULL, NULL, NULL),
 ('Calama', 'Calama', 12, 1, NULL, CURRENT_TIMESTAMP(), NULL, NULL, NULL, NULL),

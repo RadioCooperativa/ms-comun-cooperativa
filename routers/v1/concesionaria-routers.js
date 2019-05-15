@@ -3,11 +3,12 @@ var methods = require('../../src/controllers/concesionaria-methods');
 
 module.exports.register = (server) => {
     server.get({
-        path: '/mainData/',
+        path: '/concesionaria/',
         version: '1.0.0'
     },
         methods.get
     );
+
     server.get({
         path: '/concesionaria/:id',
         version: '1.0.0'
@@ -22,7 +23,7 @@ module.exports.register = (server) => {
             params: require('../../src/validators/concesionarias/insert')
         },
     },
-    methods.insertUser
+    methods.insertCons
     );
 
     server.put({
@@ -32,13 +33,13 @@ module.exports.register = (server) => {
             params: require('../../src/validators/concesionarias/insert')
         },
     },
-    methods.updateUser
+    methods.updateCons
     );
 
     server.del({
         path: '/concesionaria/:id',
         version: '1.0.0'
     },
-    methods.deleteUser
+    methods.deleteCons
     );
 }
