@@ -58,6 +58,33 @@ CREATE TABLE T_TIPO_CLIENTES(
  	CONSTRAINT PK_T_CLIENTES PRIMARY KEY (id_tipo_cliente) 
 );
 
+CREATE TABLE T_TIPO_USUARIO(
+	id_tipo_usuario				int  not null AUTO_INCREMENT,
+	nombre_tipo_usuario 		varchar(100) null,
+	descripcion_tipo_usuario	varchar(200) null,
+	fecha_creacion 				date null,
+  	fecha_modificacion 			date null,
+  	usuario_creacion 			int null,
+  	usuario_modificacion 		int null,
+ 	vigente 					bit(0),
+ 	CONSTRAINT PK_T_TIPO_USUARIO PRIMARY KEY (id_tipo_usuario) 
+);
+
+
+CREATE TABLE T_USUARIOS(
+	id_usuario				int not null AUTO_INCREMENT,
+	id_tipo_usuario			int not null,
+	nombre_usuario 			varchar(100) null,
+	pass_usuario			varchar(200) null,
+	descripcion_usuario		varchar(200) null,
+	fecha_creacion 			date null,
+  	fecha_modificacion 		date null,
+  	usuario_creacion 		int null,
+  	usuario_modificacion 	int null,
+ 	vigente 				bit(0),
+ 	CONSTRAINT PK_T_USUARIOS PRIMARY KEY (id_usuario) 
+);
+
 CREATE TABLE T_MARCA(
 	id_marca				int not null AUTO_INCREMENT,
 	nombre_marca 			varchar(100) null,
@@ -141,6 +168,9 @@ REFERENCES T_PROVINCIA (id_provincia);
 
 ALTER TABLE T_CLIENTES  ADD  CONSTRAINT FK_T_FORMULARIOS_T_CLIENTES FOREIGN KEY(id_tipo_cliente)
 REFERENCES T_TIPO_CLIENTES (id_tipo_cliente);
+
+ALTER TABLE T_USUARIOS    ADD  CONSTRAINT FK_T_USUARIOS_TIPO_USUARIO FOREIGN KEY(id_tipo_usuario)
+REFERENCES T_TIPO_USUARIO (id_tipo_usuario);
 
 ALTER TABLE T_MODELO ADD CONSTRAINT FK_T_MODELO_MARCA FOREIGN KEY(id_marca)
 REFERENCES T_MARCA (id_marca);

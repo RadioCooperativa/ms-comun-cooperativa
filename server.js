@@ -55,7 +55,8 @@ const asc_ma_coRouters = require('./routers/v1/asc-marca-concesionaria-routers')
 const asc_mo_sucRouters = require('./routers/v1/asc-modelo-sucursal-routers');
 const tipo_clienteRouters = require('./routers/v1/tipo-cliente-routers');
 const clienteRouters = require('./routers/v1/cliente-routers');
-
+const tipoUsuarioRouters = require('./routers/v1/tipo-usuario-routers');
+const uruarioRouters = require('./routers/v1/usuario-routers');
 
 
 concesionariaRouters.register(server);
@@ -66,6 +67,10 @@ asc_ma_coRouters.register(server);
 asc_mo_sucRouters.register(server);
 tipo_clienteRouters.register(server);
 clienteRouters.register(server);
+tipoUsuarioRouters.register(server);
+uruarioRouters.register(server);
+
+
 
 
 
