@@ -17,7 +17,7 @@ const restify = require('restify');
 const versioning = require('restify-url-semver');
 
 const server = restify.createServer({
-  name : `Automotriz Api v:${API_CURRENT_VERSION}`,
+  name : `Comun Api v:${API_CURRENT_VERSION}`,
   acceptable: 'application/json',
   versions: [API_MIN_VERSION, API_CURRENT_VERSION],
   version: API_CURRENT_VERSION,
@@ -70,10 +70,6 @@ clienteRouters.register(server);
 tipoUsuarioRouters.register(server);
 uruarioRouters.register(server);
 
-
-
-
-
 const cors = corsMiddleware({
   preflightMaxAge: 5,
   origins: ['http://localhost:5001'],
@@ -88,5 +84,8 @@ server.use(cors.actual);
 const port = process.env.API_PORT || 3002;
 
 server.listen(port, () => {
-  console.log({ name: "Server startup", properties: { version: API_CURRENT_VERSION, date: moment.utc().format() } });
+  console.log({ name: "Server startup", 
+  properties: { 
+    version: API_CURRENT_VERSION,
+     date: moment.utc().format() } });
 });
