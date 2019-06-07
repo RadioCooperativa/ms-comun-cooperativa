@@ -3,21 +3,21 @@ var methods = require('../../src/controllers/modelo-methods');
 
 module.exports.register = (server) => {
     server.get({
-        path: '/modelo/',
+        path: '/mainData/modelo/',
         version: '1.0.0'
     },
         methods.get
     );
 
     server.get({
-        path: '/modelo/:id',
+        path: '/mainData/modelo/:id',
         version: '1.0.0'
     },
     methods.getId
     );
 
     server.post({
-        path: '/modelo/',
+        path: '/mainData/modelo/',
         version: '1.0.0',
         // validation: {
         //     params: require('../../src/validators/modelos/insert')
@@ -27,7 +27,7 @@ module.exports.register = (server) => {
     );
 
     server.put({
-        path: '/modelo/:id',
+        path: '/mainData/modelo/:id',
         version: '1.0.0',
         // validation: {
         //     params: require('../../src/validators/modelos/insert')
@@ -37,7 +37,7 @@ module.exports.register = (server) => {
     );
 
     server.del({
-        path: '/modelo/:id',
+        path: '/mainData/modelo/:id',
         version: '1.0.0'
     },
     methods.deleteModelo
